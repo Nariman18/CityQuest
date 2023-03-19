@@ -11,9 +11,9 @@ const MenuItems = ({ showMenu, active }) => {
     return (
       <ul
         className={
-          active
-            ? "flex-col flex items-center fixed inset-0 uppercase bg-black/40 backdrop-blur-lg gap-8 justify-center p-8 lg:hidden"
-            : "hidden"
+          
+             `flex flex-col z-10 tra items-center fixed inset-0 uppercase ${ active ? "translate-y-0" : "-translate-y-full"} bg-black/40 backdrop-blur-lg gap-8 justify-center p-8 2xl:hidden xl:hidden lg:hidden transition-all duration-500 ease-in-out`
+            
         }
         
       >
@@ -73,7 +73,7 @@ function Header() {
         </div>
 
         <nav>
-    <div className="absolute right-6 lg:hidden scale-150 text-orange-500 top-12 hover:text-white hover:transition duration-150 ease-in-out">
+    <div className="absolute right-6 2xl:hidden xl:hidden lg:hidden scale-150 text-orange-500 top-12 hover:text-white hover:transition duration-150 ease-in-out">
       <MenuOutlinedIcon
         onClick={showMenu}
         className="cursor-pointer"
