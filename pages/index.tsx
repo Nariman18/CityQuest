@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <div className="bg-[#171717]">
       <Head>
-        <title>Create Next App</title>
+        <title>City Quest</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
