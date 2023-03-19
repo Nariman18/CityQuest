@@ -12,7 +12,7 @@ function LogIn() {
                     className=" object-cover"
                     
             />
-            <div className='absolute flex flex-col items-center bg-[#171717] 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
+            <div className='absolute flex flex-col items-center bg-[#171717]/90 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
                
                     <h2 className='uppercase text-white pb-10 text-2xl text-bold'>Войти</h2>
 
