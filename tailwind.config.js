@@ -26,6 +26,7 @@ module.exports = {
      ubuntu: ["Ubuntu Condensed", "sans-serif"],
      yeseva: ["Yeseva One", "cursive"],
      Roboto: ["Roboto", "sans-serif"],
+     oswald: ['Oswald', 'sans-serif']
     }
   },
   plugins: [],
