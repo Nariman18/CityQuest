@@ -47,7 +47,7 @@ const Home: NextPage = () => {
 
         <section className='bg-[#232323] max-w-full'>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 md:gird-col-2 md:space-x-8 lg:space-x-1 sm:space-x-4 font-teko lg:mr-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 md:gird-col-2 md:space-x-8 sm:space-x-4 font-teko'>
         
         <GameGuide />
         <HowToUse />

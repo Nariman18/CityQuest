@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function HowToUse() {
   return (
-    <div className='flex flex-col 2xl:p-24 xl:p-24 lg:p-24 md:p-24 sm:p-14 p-5 2xl:mb-0 xl:mb-0 lg:mb-0 md:mb-0 sm:mb-0 mb-20 2xl:space-y-20 xl:space-y-20 lg:space-y-20 md:space-y-20 sm:space-y-20 space-y-[150px]'>
+    <div className='flex flex-col 2xl:p-24 xl:p-24 lg:p-14 md:p-24 sm:p-14 p-5 2xl:mb-0 xl:mb-0 lg:mb-5 md:mb-0 sm:mb-0 mb-20 2xl:space-y-20 xl:space-y-20 lg:space-y-28 md:space-y-20 sm:space-y-20 space-y-[150px]'>
             <div className='h-14 w-full relative flex items-center'>   
             <Image src='/img/phone-payment.png'
                 fill
