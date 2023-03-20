@@ -5,6 +5,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Link from 'next/link';
 import CloseIcon from '@mui/icons-material/Close';
 import { useRouter } from "next/router";
+import { useAuth } from '../context/AuthContext'
 
 
 const MenuItems = ({ showMenu, active }) => {
@@ -50,6 +51,8 @@ const MenuItems = ({ showMenu, active }) => {
   };
 
 function Header() {
+
+    const {user, logout} = useAuth()
 
     const router = useRouter();
 
@@ -107,7 +110,11 @@ function Header() {
           Контакты
         </Link>
       </li>
-      <button onClick={() => router.push('/SignIn')} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Войти</button>
+
+      {user ? (
+        <button onClick={() => {logout(); router.push('/') }} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Выйти</button>
+      ) : ( <button onClick={() => router.push('/SignIn')} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Войти</button> ) }
+      
     </ul>
     
     <MenuItems showMenu={showMenu} active={active} />

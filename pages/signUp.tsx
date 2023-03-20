@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import LogIn from '../components/LogIn'
+import SignUp from '../components/SignUp'
 import Header from '../components/Header'
 
 function SignIn() {
@@ -15,7 +15,7 @@ function SignIn() {
 
       <main>
 
-      <LogIn />
+      <SignUp />
       
       </main>
     </div>

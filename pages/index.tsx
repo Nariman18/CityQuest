@@ -12,6 +12,8 @@ import GameGuide from '../components/GameGuide'
 import HowToUse from '../components/HowToUse'
 import ChooseYourGame from '../components/ChooseYourGame'
 import RatingCards from '../components/RatingCards'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 
 
@@ -24,6 +26,8 @@ const Home: NextPage = () => {
         <title>City Quest</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
 
       <Banner />  
 
@@ -78,7 +82,7 @@ const Home: NextPage = () => {
 
       </section>
 
-     
+      <div className='bg-[#171717]'><Footer/></div>
 
     </div>
   )
