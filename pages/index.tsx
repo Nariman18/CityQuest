@@ -82,7 +82,7 @@ const Home: NextPage = () => {
 
       </section>
 
-      <div className='bg-[#171717]'><Footer/></div>
+      
 
     </div>
   )
