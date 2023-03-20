@@ -21,7 +21,7 @@ function SignIn() {
 
       <h1>Welcome to your dashboard</h1>
 
-      <button onClick={() => router.push('/')} className='mt-10 mb-10 bg-red-400 hover:bg-white p-4 border rounded-full transition duration-300 ease-in-out'>Log Out</button>
+      <button onClick={() => router.push('/')} className='mt-10 mb-10 bg-red-400 hover:bg-white p-4 border rounded-full transition duration-300 ease-in-out'>Home</button>
       
       
       </main>
