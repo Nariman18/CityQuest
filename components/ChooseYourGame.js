@@ -3,8 +3,11 @@ import Image from "next/image"
 import HomeIcon from '@mui/icons-material/Home';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import GroupIcon from '@mui/icons-material/Group';
+import { useRouter } from 'next/router';
 
 function ChooseYourGame() {
+
+  const router = useRouter()
 
   const [cardsShown1, setCards1] = useState(false)
   const [cardsShown2, setCards2] = useState(false)
@@ -18,7 +21,7 @@ function ChooseYourGame() {
         </div>
 
         <div className='grid xl:grid-cols-3 place-items-center lg:grid-cols-2'>
-            <div className='relative h-[250px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 mr-0  group hover:scale-110 transition duration-150 ease-in-out'>
+            <div onClick={() => {router.push('/SignIn')}} className='relative h-[250px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 mr-0  group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/Icheri.jpeg'
                     fill
                     alt="logo"
@@ -37,7 +40,7 @@ function ChooseYourGame() {
             </div>
 
 
-            <div className='relative h-[250px] xl:w-[390px] w-[340px] md:w-[375px] sm:w-[375px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>
+            <div onClick={() => {router.push('/SignIn')}} className='relative h-[240px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/IcheriSheher.jpeg'
                     fill
                     alt="logo"
@@ -56,7 +59,7 @@ function ChooseYourGame() {
 
             </div>
 
-            <div className='relative h-[250px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
+            <div onClick={() => {router.push('/SignIn')}} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/902203377.jpeg'
                     fill
                     alt="logo"

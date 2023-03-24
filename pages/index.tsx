@@ -14,12 +14,17 @@ import ChooseYourGame from '../components/ChooseYourGame'
 import RatingCards from '../components/RatingCards'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useRouter } from "next/router";
 
 
 
 
 
 const Home: NextPage = () => {
+
+  const router = useRouter()
+
+
   return (
     <div className="bg-[#171717]">
       <Head>
@@ -67,7 +72,7 @@ const Home: NextPage = () => {
 
          <ChooseYourGame /> 
          
-        <button className='text-white bg-orange-500 shadow-md border mt-14 font-bold my-3 hover:bg-white hover:text-orange-500 active:scale-90 transition duration-150 uppercase w-36 p-4'>Все Квесты</button>
+        <button onClick={() => {router.push('/SignIn')}} className='text-white bg-orange-500 shadow-md border mt-14 font-bold my-3 hover:bg-white hover:text-orange-500 active:scale-90 transition duration-150 uppercase w-36 p-4'>Все Квесты</button>
         </section>
 
 

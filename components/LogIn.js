@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useAuth } from '../context/AuthContext'
 import { useRouter } from 'next/router'
 
+
 const LogIn = () => {
   const router = useRouter()
   const { user, login } = useAuth()
@@ -18,8 +19,9 @@ const LogIn = () => {
     try {
       await login(data.email, data.password)
       router.push('/dashboard')
-    } catch (err) {
-      console.log(err)
+    } catch (error) {
+      console.log(error.message)
+      alert(error.message)
     }
   }
 

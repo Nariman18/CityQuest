@@ -9,6 +9,11 @@ import { useAuth } from '../context/AuthContext'
 
 
 const MenuItems = ({ showMenu, active }) => {
+
+  const {user, logout} = useAuth()
+
+  const router = useRouter();
+
     return (
       <ul
         className={
@@ -41,9 +46,11 @@ const MenuItems = ({ showMenu, active }) => {
           </Link>
         </li>
         <li className='text-white border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 transition duration-150 ease-in-out font-thin text-lg'>
-            <Link href="/SignIn">
+           {user ? (<button onClick={() => {logout(); router.push('/')}}>
+            Выйти
+            </button>) : (<button onClick={() => router.push('/SignIn')}>
             Войти
-            </Link>
+            </button>) }
         </li>
       </ul>
       
