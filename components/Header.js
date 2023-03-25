@@ -46,9 +46,9 @@ const MenuItems = ({ showMenu, active }) => {
           </Link>
         </li>
         <li className='text-white border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 transition duration-150 ease-in-out font-thin text-lg'>
-           {user ? (<button onClick={() => {logout(); router.push('/')}}>
-            Выйти
-            </button>) : (<button onClick={() => router.push('/SignIn')}>
+           {user ? (<button onClick={() => {router.push('/dashboard')}}>
+            Профиль
+            </button>) : (<button onClick={() => {router.push('/SignIn')}}>
             Войти
             </button>) }
         </li>
@@ -119,7 +119,7 @@ function Header() {
       </li>
 
       {user ? (
-        <button onClick={() => {logout(); router.push('/') }} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Выйти</button>
+        <button onClick={() => {router.push('/dashboard') }} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Профиль</button>
       ) : ( <button onClick={() => router.push('/SignIn')} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Войти</button> ) }
       
     </ul>

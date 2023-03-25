@@ -3,10 +3,14 @@ import Head from 'next/head'
 import LogIn from '../components/LogIn'
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
+import { useAuth } from '../context/AuthContext'
+import UserDashboard from '../components/UserDashboard'
 
 function SignIn() {
 
     const router = useRouter()  
+
+    const { logout } = useAuth()
     
   return (
     <div>
@@ -19,9 +23,9 @@ function SignIn() {
 
       <main>
 
-      <h1>Welcome to your dashboard</h1>
+      <UserDashboard />
 
-      <button onClick={() => router.push('/')} className='mt-10 mb-10 bg-red-400 hover:bg-white p-4 border rounded-full transition duration-300 ease-in-out'>Home</button>
+     
       
       
       </main>

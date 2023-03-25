@@ -41,18 +41,18 @@ const SignUp = () => {
 
                       <input onChange={(e) => {
                         setData({...data, email: e.target.value})
-                      }} value={data.email} type="email" required placeholder='Ваша почта' className='p-3 text-sm outline-none pr-32 pl-5 bg-gray-800 text-white'></input>
+                      }} value={data.email} type="email" required placeholder='Ваша почта' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
 
                       <input onChange={(e) => {
                         setData({...data, password: e.target.value})
-                      }} values={data.password} type="password" required placeholder='Ваш пароль' className='p-3 text-sm outline-none pr-32 pl-5 bg-gray-800 text-white'></input>
+                      }} values={data.password} type="password" required placeholder='Ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
                     </div>
 
                     <div className='flex space-x-36'>
                       <a href='/SignIn' className='text-orange-500 text-xs flex-grow hover:text-white transition duration-150 ease-in-out'>Войти</a>
     
                     </div>
-                    <button className='text-white mt-14 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>SignUp</button>
+                    <button className='text-white mt-14 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>Sign Up</button>
             </form>
         </div>
 

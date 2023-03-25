@@ -59,7 +59,7 @@ function ChooseYourGame() {
 
             </div>
 
-            <div onClick={() => {router.push('/SignIn')}} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
+            <div onClick={() => router.push('/SignIn')} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/902203377.jpeg'
                     fill
                     alt="logo"
