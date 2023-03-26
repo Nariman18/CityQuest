@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useAuth } from '../context/AuthContext'
 
 const SignUp = () => {
+
     const { user, signup } = useAuth()
     console.log(user)
     const [data, setData] = useState({
