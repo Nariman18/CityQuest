@@ -1,32 +1,51 @@
 import React, { useState } from 'react'
 import Image from "next/image"
 import { useAuth } from '../context/AuthContext'
+import auth from '../config/firebase';
+import toast, { Toaster } from 'react-hot-toast';
+import { updateProfile } from 'firebase/auth';
+import { useRouter } from 'next/router';
 
-const SignUp = () => {
+function SignUp () {
+
+  const router = useRouter()
+
+  const errorSignUp = () => {
+    toast.error("Something went wrong")
+  }
+
+  const successSignUp = () => {
+    toast.success("Successfully signed up!")
+  }
 
     const { user, signup } = useAuth()
     console.log(user)
     const [data, setData] = useState({
       email: '',
       password: '',
+      displayName: '',
     })
   
-    const handleSignup = async (e) => {
-      e.preventDefault()
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
   
       try {
-        await signup(data.email, data.password)
+        await signup(data.email, data.password, data.displayName)
+        await updateProfile(auth.currentUser, { displayName: data.displayName });
+        successSignUp()
+        router.push('/SignIn');
       } catch (error) {
-        console.log(err)
-        alert(error.message)
+        
+        errorSignUp()
+        console.log(error)
       }
-  
       console.log(data)
-    }
+    };
 
   return (
     <div>
-
+      <Toaster />
         <div className=' h-screen w-full relative flex items-center justify-center'>
             <Image src='/img/Aze.jpeg'
                     fill
@@ -34,11 +53,13 @@ const SignUp = () => {
                     className=" object-cover"
                     
             />
-            <form onSubmit={handleSignup} className='absolute flex flex-col items-center bg-[#171717]/90 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
+            <form onSubmit={handleSubmit} className='absolute flex flex-col items-center bg-[#171717]/90 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
                
                     <h2 className='uppercase text-white pb-10 text-2xl text-bold'>Регистрация</h2>
 
                     <div className='flex flex-col space-y-5 mb-4'>
+
+                    <input type="text" onChange={(e) => setData({...data, displayName: e.target.value})} required placeholder='Ваше имя' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
 
                       <input onChange={(e) => {
                         setData({...data, email: e.target.value})
@@ -47,6 +68,10 @@ const SignUp = () => {
                       <input onChange={(e) => {
                         setData({...data, password: e.target.value})
                       }} values={data.password} type="password" required placeholder='Ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
+
+                          <input onChange={(e) => {
+                        setData({...data, password: e.target.value})
+                      }} values={data.password} type="password" required placeholder='Подтвердите ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
                     </div>
 
                     <div className='flex space-x-36'>

@@ -1,34 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from "next/image"
-import { useAuth } from '../context/AuthContext'
 import { useRouter } from 'next/router'
+import { useState } from "react"
+import { useAuth } from '../context/AuthContext'
+import toast, { Toaster } from 'react-hot-toast';
 
+
+const errorLogIn = () => {
+  toast.error("User's data is invalid", { duration: 6000 })
+}
+
+const successLogIn = () => {
+  toast.success("Successfully Logged In", { duration: 4000 })
+}
 
 const LogIn = () => {
   const router = useRouter()
-  const [error, setError] = useState('')
-  const { user, login } = useAuth()
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-  })
+  const {user, login} = useAuth()
+    const [data, setData] = useState({
+      email: '',
+      password: '',
+    })
+  
 
-  const handleLogin = async (e) => {
-    e.preventDefault()
-
-    console.log(user)
-    try {
-      await login(data.email, data.password)
-      router.push('/')
-    } catch (error) {
-      console.log(error.message)
-      alert(error.message)
+    const handleLogin = async (e) => {
+      e.preventDefault()
+     
+      
+      try {
+        await login(data.email, data.password)
+        successLogIn()
+        router.push('/')
+      }catch(error) {
+        console.log(error)
+        errorLogIn()
+      }
     }
-  }
+
+  
 
   return (
     <div>
-
+      <Toaster position='bottom-center' reverseOrder={false} />
         <div className=' h-screen w-full relative flex items-center justify-center'>
             <Image src='/img/Aze.jpeg'
                     fill

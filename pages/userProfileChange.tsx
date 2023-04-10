@@ -1,13 +1,13 @@
 import React from "react";
 import Head from "next/head";
-import LogIn from "../components/LogIn";
+import SignUp from "../components/SignUp";
 import Header from "../components/Header";
-import UserDashboard from "../components/UserDashboard";
+import UserProfile from "../components/UserProfile";
 import ProtectedRoute from "../components/ProtectedRoute";
 
-function dashboard() {
+function userProfileChange() {
   return (
-    <ProtectedRoute>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,9 +15,9 @@ function dashboard() {
 
       <Header />
 
-      <UserDashboard />
-    </ProtectedRoute>
+      <UserProfile />
+    </div>
   );
 }
 
-export default dashboard;
+export default userProfileChange;

@@ -10,7 +10,7 @@ import { useAuth } from '../context/AuthContext'
 
 const MenuItems = ({ showMenu, active }) => {
 
-  const {user, logout} = useAuth()
+  const {user} = useAuth()
 
   const router = useRouter();
 
@@ -47,7 +47,7 @@ const MenuItems = ({ showMenu, active }) => {
         </li>
         <li className='text-white border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 transition duration-150 ease-in-out font-thin text-lg'>
            {user ? (<button onClick={() => {router.push('/dashboard')}}>
-            Профиль
+            Мой Профиль
             </button>) : (<button onClick={() => {router.push('/SignIn')}}>
             Войти
             </button>) }
@@ -118,8 +118,9 @@ function Header() {
         </Link>
       </li>
 
+      
       {user ? (
-        <button onClick={() => {router.push('/dashboard') }} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Профиль</button>
+        <button onClick={() => {router.push('/dashboard') }} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Мой Профиль</button>
       ) : ( <button onClick={() => router.push('/SignIn')} className='uppercase text-white md:flex hidden border py-2 px-5 bg-orange-500 hover:bg-white hover:text-orange-500 hover:translate-x-1 transition duration-150 ease-out font-teko'>Войти</button> ) }
       
     </ul>
