@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
       <Head>
         <title>City Quest</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />
@@ -58,17 +58,8 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section id="startGame" className="mb-10 flex flex-col items-center">
+        <section id="startGame" className="mb-20 flex flex-col items-center">
           <ChooseYourGame />
-
-          <button
-            onClick={() => {
-              router.push("/SignIn");
-            }}
-            className="text-white bg-orange-500 shadow-md border mt-14 font-bold my-3 hover:bg-white hover:text-orange-500 active:scale-90 transition duration-150 uppercase w-36 p-4"
-          >
-            Все Квесты
-          </button>
         </section>
       </main>
       <Banner2 />

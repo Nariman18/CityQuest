@@ -4,18 +4,21 @@ import SignUp from "../components/SignUp";
 import Header from "../components/Header";
 import UserProfile from "../components/UserProfile";
 import ProtectedRoute from "../components/ProtectedRoute";
+import InFootstepsOfOldCity from "../components/InFootstepsOfOldCity";
 
 function firstGameCard() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>In Footsteps Of Old City</title>
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />
 
-      <div>Hello World</div>
+      <div>
+        <InFootstepsOfOldCity />
+      </div>
     </div>
   );
 }

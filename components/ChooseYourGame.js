@@ -59,7 +59,7 @@ function ChooseYourGame() {
                   <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>
                   </div>}
             </Link>)
-}
+                }
 
             { user ? (
             <Link href='/secondGameCard' className='relative h-[240px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>

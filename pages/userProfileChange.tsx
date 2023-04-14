@@ -9,8 +9,8 @@ function userProfileChange() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>User Profile Change</title>
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />

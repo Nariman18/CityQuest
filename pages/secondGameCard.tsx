@@ -1,21 +1,21 @@
 import React from "react";
 import Head from "next/head";
-import SignUp from "../components/SignUp";
 import Header from "../components/Header";
-import UserProfile from "../components/UserProfile";
-import ProtectedRoute from "../components/ProtectedRoute";
+import EscapeFromTower from "../components/EscapeFromTower";
 
 function secondGameCard() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Escape From Tower</title>
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />
 
-      <div>Hello World</div>
+      <div>
+        <EscapeFromTower />
+      </div>
     </div>
   );
 }

@@ -9,8 +9,8 @@ function dashboard() {
   return (
     <ProtectedRoute>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Dashboard</title>
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />

@@ -7,8 +7,8 @@ function signUp() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Sign Up</title>
+        <link rel="icon" href="/img/32.png" />
       </Head>
 
       <Header />
