@@ -49,12 +49,12 @@ function UserDashboard() {
                     
                     {user &&
                      <Link href='/userProfileChange'>
-                      <button className='text-white mt-5 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>Изменить Профиль</button>
+                      <button className='text-white mt-5 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>Change my profile</button>
                       </Link>
                     }              
                     
 
-                    <button onClick={() => { logout(); successLogOut(), router.push('/SignIn')} } className='text-white mt-14 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>выйти</button>
+                    <button onClick={() => { logout(); successLogOut(), router.push('/SignIn')} } className='text-white mt-14 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>Log Out</button>
             </form>
         </div>
     

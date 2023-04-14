@@ -58,7 +58,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="mb-10 flex flex-col items-center">
+        <section id="startGame" className="mb-10 flex flex-col items-center">
           <ChooseYourGame />
 
           <button

@@ -51,21 +51,21 @@ const LogIn = () => {
             />
             <form onSubmit={handleLogin} className='absolute flex flex-col items-center bg-[#171717]/90 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
                
-                    <h2 className='uppercase text-white pb-10 text-2xl text-bold'>Войти</h2>
+                    <h2 className='uppercase text-white pb-10 text-2xl text-bold'>Log In</h2>
 
                     <div className='flex flex-col space-y-5 mb-4'>
                       <input onChange={(e) => {
                         setData({...data, email: e.target.value})
-                      }} value={data.email} type="email" required placeholder='Ваша почта' className='p-3 text-sm outline-none w-[300px] bg-gray-800 text-white'></input>
+                      }} value={data.email} type="email" required placeholder='Your email address' className='p-3 text-sm outline-none w-[300px] bg-gray-800 text-white'></input>
 
                       <input onChange={(e) => {
                         setData({...data, password: e.target.value})
-                      }} values={data.password} type="password" required placeholder='Ваш пароль' className='p-3 text-sm outline-none w-[300px] bg-gray-800 text-white'></input>
+                      }} values={data.password} type="password" required placeholder='Your password' className='p-3 text-sm outline-none w-[300px] bg-gray-800 text-white'></input>
                     </div>
 
                     <div className='flex space-x-36'>
-                      <a href='/signUp' className='text-orange-500 text-xs flex-grow hover:text-white transition duration-150 ease-in-out'>Регистрация</a>
-                      <a href='/' className='text-orange-500 text-xs flex-grow hover:text-white transition duration-150 ease-in-out'>Забыли пароль?</a>
+                      <a href='/signUp' className='text-orange-500 text-xs flex-grow hover:text-white transition duration-150 ease-in-out'>Sign Up</a>
+                      <a href='/' className='text-orange-500 text-xs flex-grow hover:text-white transition duration-150 ease-in-out'>Forgot your password?</a>
                     </div>
                     <button className='text-white mt-14 py-4 px-8 bg-orange-500 hover:bg-white transition duration-150 ease-in-out hover:text-orange-500 uppercase text-base font-Roboto'>Log in</button>
             </form>
