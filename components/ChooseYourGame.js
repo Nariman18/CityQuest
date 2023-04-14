@@ -4,6 +4,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import GroupIcon from '@mui/icons-material/Group';
 import { useRouter } from 'next/router';
+import { useAuth } from '../context/AuthContext'
+import Link from 'next/link';
 
 function ChooseYourGame() {
 
@@ -13,6 +15,8 @@ function ChooseYourGame() {
   const [cardsShown2, setCards2] = useState(false)
   const [cardsShown3, setCards3] = useState(false)
 
+  const {user} = useAuth()
+
   return (
     <div className='flex flex-col items-center justify-center'>
         <div className='flex flex-col items-center mt-10 mb-8'>
@@ -21,7 +25,8 @@ function ChooseYourGame() {
         </div>
 
         <div className='grid xl:grid-cols-3 place-items-center lg:grid-cols-2'>
-            <div onClick={() => {router.push('/SignIn')}} className='relative h-[250px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 mr-0  group hover:scale-110 transition duration-150 ease-in-out'>
+          { user ? (
+            <Link href="/firstGameCard" className='relative h-[250px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 mr-0  group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/Icheri.jpeg'
                     fill
                     alt="logo"
@@ -37,10 +42,27 @@ function ChooseYourGame() {
                   <p className='text-white absolute bottom-8 left-4 flex items-center font-thin text-[16px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p>
                   <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>
                   </div>}
-            </div>
+            </Link>) : (<Link href="/SignIn" className='relative h-[250px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 mr-0  group hover:scale-110 transition duration-150 ease-in-out'>
+            <Image src='/img/Icheri.jpeg'
+                    fill
+                    alt="logo"
+                    className=" object-contain"
+                    onMouseEnter={() => setCards1(true)}
+                    onMouseLeave={() => setCards1(false)}
+            />
+                <p className='text-white absolute text-lg font-bold font-yeseva uppercase visible group-hover:invisible'>По следам старого города</p>
 
+                {cardsShown1 && <div>
 
-            <div onClick={() => {router.push('/SignIn')}} className='relative h-[240px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>
+                  <p className='text-white absolute top-2 right-3 text-[16px] flex items-center font-thin group-hover:text-white'><HomeIcon fill className='h-5 text-orange-500'/> ИчериШехер</p>
+                  <p className='text-white absolute bottom-8 left-4 flex items-center font-thin text-[16px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p>
+                  <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>
+                  </div>}
+            </Link>)
+}
+
+            { user ? (
+            <Link href='/secondGameCard' className='relative h-[240px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/IcheriSheher.jpeg'
                     fill
                     alt="logo"
@@ -56,10 +78,30 @@ function ChooseYourGame() {
             <p className='text-white absolute bottom-8 left-4 flex items-center font-thin text-[16px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p>
             <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>
             </div>}
+            
 
-            </div>
+            </Link>) : (   <Link href='/SignIn' className='relative h-[240px] w-[350px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 lg:mx-7 group hover:scale-110 transition duration-150 ease-in-out'>
+            <Image src='/img/IcheriSheher.jpeg'
+                    fill
+                    alt="logo"
+                    className=" object-cover"
+                    onMouseEnter={() => setCards2(true)}
+                    onMouseLeave={() => setCards2(false)}
+            />
+            <p className='text-white absolute text-lg font-bold font-yeseva uppercase visible group-hover:invisible'>Побег из крепости</p>
 
-            <div onClick={() => router.push('/SignIn')} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
+            {cardsShown2 && <div onMouseEnter={() => setCards2(true)} onMouseLeave={() => setCards2(false)}>
+
+            <p className='text-white absolute top-2 right-3 text-[16px] flex items-center font-thin group-hover:text-white'><HomeIcon fill className='h-5 text-orange-500'/> IceriSheher</p>
+            <p className='text-white absolute bottom-8 left-4 flex items-center font-thin text-[16px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p>
+            <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>
+            </div>}
+            
+
+            </Link>) }
+
+              { user ? (
+            <Link href='/thirdGameCard' onClick={() => router.push('/SignIn')} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
             <Image src='/img/902203377.jpeg'
                     fill
                     alt="logo"
@@ -76,7 +118,25 @@ function ChooseYourGame() {
             <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> Только для двоих</p>
             </div>}
 
-            </div>
+            </Link> ) : ( <Link href='/SignIn' onClick={() => router.push('/SignIn')} className='relative h-[245px] w-[340px] cursor-pointer flex justify-center items-center xl:mb-0 lg:mb-14 md:mb-10 mb-10 sm:mb-10 group hover:scale-110 transition duration-150 ease-in-out'>
+            <Image src='/img/902203377.jpeg'
+                    fill
+                    alt="logo"
+                    className=" object-cover"
+                    onMouseEnter={() => setCards3(true)}
+                    onMouseLeave={() => setCards3(false)}
+
+            />
+            <p className='text-white absolute text-lg font-bold font-yeseva uppercase visible group-hover:invisible'>вперёд в будущее</p>
+            {cardsShown3 && <div onMouseEnter={() => setCards3(true)} onMouseLeave={() => setCards3(false)}>
+
+            <p className='text-white absolute top-2 right-3 text-[16px] flex items-center font-thin group-hover:text-white'><HomeIcon fill className='h-5 text-orange-500'/> Ваши Воспоминания</p>
+            <p className='text-white absolute bottom-8 left-4 flex items-center font-thin text-[16px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p>
+            <p className='text-white absolute bottom-2 left-4 flex items-center font-thin text-[16px]'><GroupIcon fill className='h-4 text-orange-500'/> Только для двоих</p>
+            </div>}
+
+            </Link>)
+            }
         </div>
        
  

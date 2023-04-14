@@ -12,7 +12,7 @@ function UserDashboard() {
       toast.success('Successfully logged out', {duration: 4000});
     }
 
-    const {user, logout } = useAuth()
+    const {user, logout} = useAuth()
 
     const [displayName, setDisplayName] = useState("");
 
@@ -22,7 +22,7 @@ function UserDashboard() {
 
     useEffect(() => {
       if (user) {
-        setDisplayName(user.displayName);
+        setDisplayName(user.displayName);   
         setUserEmail(user.email)
       }
     }, [user]);
@@ -42,9 +42,9 @@ function UserDashboard() {
             />
             <form className='absolute flex flex-col items-center bg-[#171717]/90 2xl:p-10 xl:p-10 lg:p-20 md:p-10 sm:p-9 p-7'>
                
-                    <h2 className='text-white pb-10 text-xl text-bold'>Welcome to your Dashboard, <span className='uppercase text-orange-500'>{displayName}</span></h2>
+                    <h2 className='text-white pb-10 text-xl text-bold'>Welcome to your Dashboard, <span className='underline text-orange-500'>{displayName}</span></h2>
 
-                    <h2 className=' text-white pb-10 text-xl text-bold'>Your email: <span className='text-orange-500'>{userEmail}</span></h2> 
+                    <h2 className=' text-white pb-10 text-xl text-bold'>Your email: <span className='underline text-orange-500'>{userEmail}</span></h2> 
 
                     
                     {user &&

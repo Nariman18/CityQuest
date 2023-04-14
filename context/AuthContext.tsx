@@ -1,11 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
+  Auth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
   updateEmail,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 } from "firebase/auth";
 import auth from "../config/firebase";
 
@@ -97,6 +101,28 @@ export const AuthContextProvider = ({
       throw new Error("User not found");
     }
   };
+
+  const updateUserProfilePassword = async (
+    password: string,
+    newPassword: string
+  ) => {
+    const user = auth.currentUser;
+
+    if (user) {
+      const credential = EmailAuthProvider.credential(user.email!, password);
+
+      try {
+        await reauthenticateWithCredential(user, credential);
+        await updatePassword(user, newPassword);
+      } catch (error) {
+        console.log(error);
+        throw new Error("Password change failed");
+      }
+    } else {
+      throw new Error("User not found");
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -106,6 +132,7 @@ export const AuthContextProvider = ({
         logout,
         updateUserProfile,
         updateUserProfileEmail,
+        updateUserProfilePassword,
       }}
     >
       {children}

@@ -24,11 +24,16 @@ function SignUp () {
       email: '',
       password: '',
       displayName: '',
+      confirmPassword: '',
     })
   
     const handleSubmit = async (e) => {
       e.preventDefault();
   
+      if (data.password !== data.confirmPassword) {
+        toast.error("Passwords do not match")
+        return;
+      }
   
       try {
         await signup(data.email, data.password, data.displayName)
@@ -45,7 +50,7 @@ function SignUp () {
 
   return (
     <div>
-      <Toaster />
+      <Toaster position='bottom-center' reverseOrder={false} />
         <div className=' h-screen w-full relative flex items-center justify-center'>
             <Image src='/img/Aze.jpeg'
                     fill
@@ -70,8 +75,8 @@ function SignUp () {
                       }} values={data.password} type="password" required placeholder='Ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
 
                           <input onChange={(e) => {
-                        setData({...data, password: e.target.value})
-                      }} values={data.password} type="password" required placeholder='Подтвердите ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
+                        setData({...data, confirmPassword: e.target.value})
+                      }} values={data.confirmPassword} type="password" required placeholder='Подтвердите ваш пароль' className='p-4 text-sm outline-none w-[260px] bg-gray-800 text-white'></input>
                     </div>
 
                     <div className='flex space-x-36'>
