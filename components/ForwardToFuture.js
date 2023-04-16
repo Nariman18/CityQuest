@@ -21,10 +21,10 @@ function InFootstepsOfOldCity() {
             <Image src='/img/902203377.jpeg' fill='true' className='object-cover' />
         </div>
 
-        <div className='flex mt-8 2xl:space-x-[200px] xl:space-x-[200px] lg:space-x-[190px] md:space-x-[170px] space-x-[50px]'>
+        <div className='flex mt-8 2xl:space-x-[200px] xl:space-x-[200px] lg:space-x-[190px] md:space-x-[170px] space-x-[40px]'>
             <p className='text-white flex items-center font-thin text-[14px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>  
             <p className='text-white flex items-center font-thin text-[14px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p> 
-            <p className='text-white text-[14px] flex items-center font-thin'><HomeIcon fill className='h-5 text-orange-500'/> ИчериШехер</p>
+            <p className='text-white text-[14px] flex items-center font-thin'><HomeIcon fill className='h-4 text-orange-500'/> ИчериШехер</p>
         </div>
 
         <p className='text-white mt-14 text-lg font-el 2xl:px-[160px] xl:px-[160px] lg:px-[60px] md:px-[80px] px-[20px]'>Вы находитесь в самом центре города Баку, а Ичери Шехер является его сердцем,где вам предоставлен наш квест. <br/> 

@@ -17,14 +17,14 @@ function InFootstepsOfOldCity() {
 
        <div className='flex flex-col justify-center items-center mt-14'>
 
-        <div className='relative 2xl:w-[1200px] xl:w-[1200px] lg:w-[900px] lg:h-[700px] md:w-[600px] md:h-[400px] sm:w-[600px] sm:h-[340px] 2xl:h-[800px] xl:h-[800px] w-[400]px] h-[240px]'>
+        <div className='relative 2xl:w-[1200px] xl:w-[1200px] lg:w-[900px] lg:h-[700px] md:w-[600px] md:h-[400px] sm:w-[600px] sm:h-[340px] 2xl:h-[800px] xl:h-[800px] w-[400px] h-[240px]'>
             <Image src='/img/448866565.jpeg' fill='true' className='object-contain' />
         </div>
 
-        <div className='flex mt-8 2xl:space-x-[200px] xl:space-x-[200px] lg:space-x-[190px] md:space-x-[170px] space-x-[50px]'>
+        <div className='flex mt-8 2xl:space-x-[200px] xl:space-x-[200px] lg:space-x-[190px] md:space-x-[170px] space-x-[40px]'>
             <p className='text-white flex items-center font-thin text-[14px]'><GroupIcon fill className='h-4 text-orange-500'/> 2-5 Игроков</p>  
             <p className='text-white flex items-center font-thin text-[14px]'><NotificationsActiveIcon fill className='h-4 text-orange-500'/> 2 Часа</p> 
-            <p className='text-white text-[14px] flex items-center font-thin'><HomeIcon fill className='h-5 text-orange-500'/> ИчериШехер</p>
+            <p className='text-white text-[14px] flex items-center font-thin'><HomeIcon fill className='h-4 text-orange-500'/> ИчериШехер</p>
         </div>
 
         <p className='text-white mt-14 text-lg font-el 2xl:px-[160px] xl:px-[160px] lg:px-[60px] md:px-[80px] px-[20px]'>Вы находитесь в самом центре города Баку, а Ичери Шехер является его сердцем,где вам предоставлен наш квест. <br/> 
