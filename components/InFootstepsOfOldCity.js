@@ -17,7 +17,7 @@ function InFootstepsOfOldCity() {
 
        <div className='flex flex-col justify-center items-center mt-14'>
 
-        <div className='relative 2xl:w-[1200px] xl:w-[1200px] lg:w-[900px] lg:h-[700px] md:w-[600px] md:h-[400px] sm:w-[600px] sm:h-[340px] 2xl:h-[800px] xl:h-[800px] w-[400px] h-[240px]'>
+        <div className='relative 2xl:w-[1200px] xl:w-[1200px] lg:w-[900px] lg:h-[700px] md:w-[600px] md:h-[400px] sm:w-[600px] sm:h-[340px] 2xl:h-[800px] xl:h-[800px] w-[350px] h-[240px]'>
             <Image src='/img/448866565.jpeg' fill='true' className='object-contain' />
         </div>
 

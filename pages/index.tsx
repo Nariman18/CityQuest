@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <Toaster position="bottom-center" reverseOrder={false} />
 
       <Head>
-        <title>Main Page</title>
+        <title>City Quest</title>
         <link rel="icon" href="/img/32.png" />
       </Head>
 
